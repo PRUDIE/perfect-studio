@@ -10,7 +10,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="keywords" content="home, courses, studio, contact, creative, agency">
+		<meta name="keywords" content="home, courses, training, studio, contact, creative, agency">
 
 		<!-- title -->
 		<title>Perfect Studio Hub</title>
@@ -74,21 +74,54 @@
 
 		    </div>
 
-		    <!-- Collect the nav links, and other content for toggling -->
-		    <div class="collapse navbar-collapse" id="nav-icon-collapse">
-		      
-			  <!-- links -->
-		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="#" data-scroll-nav="0" class="active">Home</a></li>
-		        <li><a href="#" data-scroll-nav="1">About</a></li>
-		        <li><a href="#" data-scroll-nav="3">Courses</a></li>
-		        <li><a href="#" data-scroll-nav="4">Clients</a></li>
-		        <li><a href="#" data-scroll-nav="6">Contact</a></li>
-		        <input type="text" placeholder="Search..">
-		      </ul>
-		    </div><!-- /.navbar-collapse -->
-		  </div><!-- /.container -->
-		</nav>
+		    <!-- Collect the nav links, and other content for toggling
+		    <div class="collapse navbar-collapse" id="nav-icon-collapse">-->
+
+        <section id="newsletter">
+            <!-- links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" data-scroll-nav="0" class="active">Home</a></li>
+                <li><a href="#" data-scroll-nav="1">About</a></li>
+                <li><a href="#" data-scroll-nav="3">Courses</a></li>
+                <li><a href="#" data-scroll-nav="4">Clients</a></li>
+                <li><a href="#" data-scroll-nav="6">Contact</a></li>
+            <div class="container">
+                <input type="text" id="training" placeholder=" Enter training program..." style=" font-size:17px; width:300px; height: 40px;">
+                <button class="button_1" onclick="myFunction()" >Search</button>
+            </div>
+            </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container -->
+        </nav>
+        </section>
+
+        <script>
+            function myFunction() {
+                document.getElementById("demo").innerHTML= " ";
+                var list=[];
+                var x= document.getElementsByClassName("title");
+                var course=document.getElementById("course");
+
+                if(training.value.length == 0){document.getElementById("demo").innerHTML="Please enter a course to begin Search"; return false;}
+                document.getElementById("dem").innerHTML= "Search Results";
+
+                for (i = 0; i < x.length; i++) {
+                    if(x[i].textContent.toLowerCase().includes(course.value.toLowerCase())) {
+                        list.push("true");
+                        var ans = document.createElement("a");
+                        ans.setAttribute("href", "#" + x[i].id );
+                        ans.innerHTML =  x[i].textContent;
+                        document.getElementById("demo").innerHTML += "{ success:true,  data:  "
+                        var n=document.getElementById("demo").appendChild(ans);
+                        document.getElementById("demo").innerHTML += " }"
+                        document.getElementById("demo").innerHTML += " <br>";
+
+                    }}
+
+                if(list.length==0) {document.getElementById("demo").innerHTML +=" { success: false,  data: Sorry...Courses not available at the moment }";}
+            }
+            </script>
+
 		<!-- ====== End Navgition ======  -->
 
 		<!-- ====== Header ======  -->
